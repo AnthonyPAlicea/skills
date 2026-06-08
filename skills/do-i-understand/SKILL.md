@@ -18,6 +18,8 @@ Only with a concrete change in hand: a PR, branch, diff, or staged work. No diff
 
 Work from the real changed lines, not a description of them. Get the diff however the setup allows: the PR or MR, a branch comparison, staged work, or a diff the developer pastes. Read all of it before asking anything.
 
+**Line numbers drift; don't cite from memory.** A diff's line numbers shift the moment anything above them changes: a later edit, a commit, a rebase. Never quote a line number you're recalling from earlier in the conversation. Re-derive it from the *current* file at the moment you cite it, and verify the line number and what you intend to call out match.
+
 ## Step 2: Triage, don't carpet-bomb
 
 Pick **several regions where not-understanding would cost the most** and stay there. Priority order:
@@ -41,11 +43,15 @@ Ask **one question, then wait.** Never dump a list; the follow-up from the devel
 - consequence
 - alternatives
 - assumptions
-- failure modes. 
+- failure modes 
 
 A good question can't be answered by reading the code aloud but by understanding *why*.
 
-Question types (ground each in specific lines in the codebase):
+Question types (ground each in specific lines in the codebase — **quote a short verbatim snippet as the anchor, with the line number as a secondary pointer.** The snippet survives line drift; a bare number does not. If you cite a number, you must have confirmed that it points at that snippet in the current file).
+
+**Every question must name the line(s) it's about and, when the interface renders links, point there with a clickable reference**: e.g. a markdown link like `[index.html:835](index.html#L835)` or `[index.html:789-794](index.html#L789-L794)`. The developer should never have to hunt for the code you're asking about; put them on the exact lines. This is not optional or "when convenient", a question without its location attached is incomplete. Re-derive the number from the current file at ask-time (it drifts), and keep the verbatim snippet as the primary anchor so the question survives even if the link is stale.
+
+Possible areas of interest (this is not exhaustive come up with others as you see fit for the context):
 
 - **Blast radius**: "This returns `null` on a cache miss instead of throwing. Where downstream assumed a value was always there?"
 - **Road not taken**: "Why `useMemo` here? What cost is it avoiding, and how would you know if it's helping?"
@@ -55,6 +61,8 @@ Question types (ground each in specific lines in the codebase):
 - **Hidden assumption**: "This assumes `items` is sorted. Where's that guaranteed, and what if it stops?"
 - **Reachable failure**: "One input that makes this throw or hang? Is it reachable from a real request?"
 - **Contract change**: "Who calls this signature, and did every caller get updated, or just the ones in this diff?"
+
+**Don't turn it into a quiz.** The aim is accountability, not a right answer. A quiz question has one answer you already hold and can be passed or failed (i.e. "which input makes this throw, and what's the exact output?"). It rewards puzzle-solving and makes "I don't know" feel like losing, which is the opposite of what you want. Probe what the developer can stand behind instead: the rationale, the consequence, the shape of the failure, in their own words. "What kind of input would break this, and would a real user hit it?" tests understanding; "give me the exact keystrokes the user would enter and the resulting value" is a gotcha. If your question has a single keystroke-perfect answer you could grade, broaden it until it can't be: ask *why* the guard exists and *what* it's protecting, not for a reproduction on demand.
 
 **Probe thin answers.** If an answer just restates the code, leans on the AI's authority ("the model said..."), or hedges, follow up once or twice: "Ok, but *why that and not...?*" An appeal to the AI is not understanding.
 
