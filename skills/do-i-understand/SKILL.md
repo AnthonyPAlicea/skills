@@ -12,7 +12,7 @@ This is designed for AI-written code. An agent produces a correct-looking diff f
 
 ## When it fires
 
-Only with a concrete change in hand: a PR, branch, diff, or staged work. No diff yet? Ask for one; abstract questions get abstract answers. Don't fire for "explain this codebase" requests, which are tutoring, not a pre-merge check.
+Only with a concrete change in hand: a PR, branch, diff, or staged work. No diff yet? Ask for one; abstract questions get abstract answers. Don't fire for "explain this codebase" requests, this is about the developer showing their understanding, not explaining things to them.
 
 ## Step 1: Get the diff
 
@@ -32,7 +32,7 @@ Pick **several regions where not-understanding would cost the most** and stay th
 8. Cargo-culted boilerplate added "just in case"
 9. Custom implementations of things that are widely available publically or already in the codebase
 
-Skip the cheap-to-be-wrong stuff (renamed locals, log lines). Specify which regions you picked and why.
+Skip the low-risk-to-be-wrong stuff (renamed locals, log lines). Specify which regions you picked and why.
 
 ## Step 3: Interrogate, one question at a time
 
