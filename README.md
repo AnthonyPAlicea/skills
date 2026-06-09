@@ -10,7 +10,7 @@ As developers, designers, and managers find their responsibilities merging, they
 ### do-i-understand
 
 ```
-npx skills add https://github.com/anthhonypalicea/skills --skill do-i-understand
+npx skills add https://github.com/anthonypalicea/skills --skill do-i-understand
 ```
 
 This is a reverse code review. It reviews the developer, not the code. It's about ensuring that you, the developer, understand the code well enough to be accountable for it, and it encourages you not to lose your skill in the age of AI-generation. 
