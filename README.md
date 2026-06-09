@@ -15,6 +15,6 @@ npx skills add https://github.com/anthonypalicea/skills --skill do-i-understand
 
 This is a reverse code review. It reviews the developer, not the code. It's about ensuring that you, the developer, understand the code well enough to be accountable for it, and it encourages you not to lose your skill in the age of AI-generation. 
 
-Running `/do-i-understand` looks at the changes about to be pushed and probes your reasoning, the consequences, the assumptions you're making, and the ways the change could fail, and it finds the parts you don't yet fully understand.
+Running `/do-i-understand` looks at the changes about to be pushed (or previous commits if you like) and probes your reasoning, the consequences, the assumptions you're making, and the ways the change could fail, and it finds the parts you don't yet fully understand.
 
 Use the report at the end to include in a merge request to display your understanding and where it needed to be shore up.
