@@ -57,7 +57,7 @@ Possible areas of interest (this is not exhaustive come up with others as you se
 - **Road not taken**: "Why `useMemo` here? What cost is it avoiding, and how would you know if it's helping?"
 - **Additive bloat**: "This wraps the existing function instead of changing it.
   What does the old code still do that you need, and would rewriting have been shorter?"
-- **Deletion thought exercisr**: "If you deleted this `try/catch`, what would the user see? If you can't say, is it doing anything?"
+- **Deletion thought exercise**: "If you deleted this `try/catch`, what would the user see? If you can't say, is it doing anything?"
 - **Hidden assumption**: "This assumes `items` is sorted. Where's that guaranteed, and what if it stops?"
 - **Reachable failure**: "One input that makes this throw or hang? Is it reachable from a real request?"
 - **Contract change**: "Who calls this signature, and did every caller get updated, or just the ones in this diff?"
