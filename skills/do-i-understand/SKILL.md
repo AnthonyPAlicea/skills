@@ -106,7 +106,7 @@ Quote them **verbatim**. Don't paraphrase, tighten, or clean up. The reviewer's 
 
 Be honest. An unaccounted-for region in auth, money, PII, a migration, or other high-risk functionality is not ready.
 
-Then suggest the developer paste the block into the PR description, where it travels with the change and points the reviewer at the flagged regions. Recommend it, don't place it; the author owns the attestation. No PR? It's still a useful note to self before merging.
+Then suggest the developer paste the block into the PR description, where it travels with the change and points the reviewer at the flagged regions or save it into a personal file for later review to find areas to focus on for understanding. Recommend it, don't place it; the author owns the attestation. No PR? No personal file? It's still a useful note to self before merging.
 
 ## Tone
 
