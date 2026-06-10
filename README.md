@@ -13,8 +13,15 @@ As developers, designers, and managers find their responsibilities merging, they
 npx skills add https://github.com/anthonypalicea/skills --skill do-i-understand
 ```
 
-This is a reverse code review. It reviews the developer, not the code. It's about ensuring that you, the developer, understand the code well enough to be accountable for it, and it encourages you not to lose your skill in the age of AI-generation. 
+This is a reverse code review. The goal is to ensure that you, the developer, understand your AI-generated code well enough to be accountable for it, and it encourages you not to lose your skill in the age of LLM-generation. 
 
-Running `/do-i-understand` looks at the changes about to be pushed (or previous commits if you like) and probes your reasoning, the consequences, the assumptions you're making, and the ways the change could fail, and it finds the parts you don't yet fully understand.
+Running `/do-i-understand` looks at the changes about to be pushed (or previous commits if you like), prioritizes changes to review with you, then probes your reasoning, the consequences, the assumptions you're making, and the ways the change could fail, trying to help you find the parts (if any) that you don't yet fully understand or haven't thought through yourself.
 
-Use the report at the end to include in a merge request to display your understanding and where it needed to be shore up.
+Use the report at the end to include in a merge request description for your reviewer or in a personal record for your own review.
+
+## When to use this skill
+You might use this skill to:
+
+1. Maintain your own skill and understanding of your codebase.
+2. Make a safe space for junior engineers and require the usage of this skill as part of their PRs. Ask them not to submit the merge request until they are comfortable with their understanding, or to include the report in the PR description with "I don't know" as being a welcome answer that invites pair coding and mentorship.
+3. Open source maintainers may require a do-i-understand report in PRs as a light honor system requirement.
