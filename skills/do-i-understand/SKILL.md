@@ -76,7 +76,7 @@ Possible areas of interest (this is not exhaustive come up with others as you se
 
 Always end here, however the rest went:
 
-> "Which part of this diff do you understand *least*? If it's wrong, how would you find out: review, CI, prod, or never?"
+> "Which part of this diff do you understand *least*? If it's wrong, how would you find out: review, CI, prod, or perhaps never?"
 
 Suggest risk factors in not understanding that portion of the diff.
 
