@@ -87,7 +87,7 @@ A qualification, not a score: the developer attesting to what they can stand beh
 Quote them **verbatim**. Don't paraphrase, tighten, or clean up. The reviewer's main defense against an AI-generated answer is reading what the author actually wrote. Trim with an ellipsis if long, never reword. Don't judge human-vs-AI yourself; preserve the text and let the reviewer decide.
 
 ```
-## Author's understanding: <PR title>
+## Author's understanding
 
 ### Accounted for ✓
 - <region>
@@ -97,8 +97,8 @@ Quote them **verbatim**. Don't paraphrase, tighten, or clean up. The reviewer's 
 ### Not yet accounted for ⚠
 - <region>
   Q: <question>
-  A: "<answer verbatim including "I don't know">"
-  to clarify: <action that would let you account for it>
+  A: "<answer verbatim including 'I don't know'>"
+  to clarify: <action that would help you account for it>
 
 ### Recommendation
 <Ready to merge> / <One more pass on the flagged regions first>
