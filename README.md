@@ -19,7 +19,7 @@ Running `/do-i-understand` looks at the changes about to be pushed (or previous 
 
 Use the report at the end to include in a merge request description for your reviewer or in a personal record for your own review.
 
-### When to use this skill
+#### When to use this skill
 You might use this skill to:
 
 1. Maintain your own skill and understanding of your codebase.
