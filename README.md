@@ -5,6 +5,8 @@ These skills are designed to help developers and software engineers to build the
 
 As developers, designers, and managers find their responsibilities merging, they also helps balance the activity of writing good software across the entire SDLC.
 
+At heart, the thesis is that product people should understand and be able to be accountable for the AI-generated things they put into production. This benefits everyone.
+
 ## Skills
 
 ### do-i-understand
