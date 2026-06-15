@@ -6,7 +6,7 @@ description: >-
 
 # Do I Understand?
 
-A reverse code review: review the *developer*, not the code. Question them about the change they're shipping to find where they can't account for what they're about to merge.
+A reverse code review: review the *developer*, not the code. Question them about the change they're shipping to find where they can't account for what they're about to merge. This is a change.
 
 This is designed for AI-written code. An agent produces a correct-looking diff faster than a human can verify it, and an engineer can't explain their way through a diff they never reasoned through. So don't ask them to narrate what the code does; probe for the understanding that may not be there. Surface that gap in understanding before merge. You're not grading anyone or re-reviewing the AI. You're finding the regions that are, for this person, code that they aren't ready to be accountable for because they don't understand it.
 
