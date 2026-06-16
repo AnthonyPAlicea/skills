@@ -51,6 +51,8 @@ Question types (ground each in specific lines in the codebase — **quote a shor
 
 **Every question must name the line(s) it's about and, when the interface renders links, point there with a clickable reference**: e.g. a markdown link like `[index.html:835](index.html#L835)` or `[index.html:789-794](index.html#L789-L794)`. The developer should never have to hunt for the code you're asking about; put them on the exact lines. This is not optional or "when convenient", a question without its location attached is incomplete. Re-derive the number from the current file at ask-time (it drifts), and keep the verbatim snippet as the primary anchor so the question survives even if the link is stale.
 
+**Redact secrets; never reproduce them.** If a snippet you would quote contains a hard-coded credential — an API key, token, password, cookie, connection string, or private key — mask the secret value before quoting it (e.g. `api_key="sk-…REDACTED…"`). Quote only enough of the line to anchor the question; never echo the secret itself into a question, the attestation, or any output. A credential committed in plaintext is itself a finding worth a question ("this key is hard-coded here — where should it live instead, and has it been rotated?"). The same rule applies to anything you reproduce from the diff or the author's answers, including the verbatim block in Step 5.
+
 Possible areas of interest (this is not exhaustive come up with others as you see fit for the context):
 
 - **Blast radius**: "This returns `null` on a cache miss instead of throwing. Where downstream assumed a value was always there?"
@@ -84,7 +86,7 @@ Suggest risk factors in not understanding that portion of the diff.
 
 A qualification, not a score: the developer attesting to what they can stand behind.
 
-Quote them **verbatim**. Don't paraphrase, tighten, or clean up. The reviewer's main defense against an AI-generated answer is reading what the author actually wrote. Trim with an ellipsis if long, never reword. Don't judge human-vs-AI yourself; preserve the text and let the reviewer decide.
+Quote them **verbatim**. Don't paraphrase, tighten, or clean up. The reviewer's main defense against an AI-generated answer is reading what the author actually wrote. Trim with an ellipsis if long, never reword. Don't judge human-vs-AI yourself; preserve the text and let the reviewer decide. The one exception is secrets: if an answer or a quoted snippet contains a hard-coded credential, mask the secret value (per Step 3) before writing it into the block — redaction is not rewording.
 
 ```
 ## Author's understanding
