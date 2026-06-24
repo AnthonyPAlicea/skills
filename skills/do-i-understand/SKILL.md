@@ -32,18 +32,18 @@ Pick **several regions where not-understanding would cost the most** and stay th
 6. Large additive blocks bolted onto working code. Agents add rather than rewrite, so watch for additions that duplicate, shadow, or bypass logic the file already had; the rewrite was often shorter.
 7. Error handling, edge cases, and unhappy paths
 8. Cargo-culted boilerplate added "just in case"
-9. Custom implementations of things that are widely available publically or already in the codebase
+9. Custom implementations of things that are widely available publicly or already in the codebase
 
 Skip the low-risk-to-be-wrong stuff (renamed locals, log lines). Specify which regions you picked and why.
 
 ## Step 3: Interrogate, one question at a time
 
-Ask **one question, then wait.** Never dump a list; the follow-up from the developer is key information. Ask for what isn't in the diff: 
+Ask **one question, then wait.** Never dump a list; the follow-up from the developer is key information. Ask for what isn't in the diff:
 - rationale
 - consequence
 - alternatives
 - assumptions
-- failure modes 
+- failure modes
 
 A good question can't be answered by reading the code aloud but by understanding *why*.
 
@@ -53,7 +53,7 @@ Question types (ground each in specific lines in the codebase — **quote a shor
 
 **Redact secrets; never reproduce them.** If a snippet you would quote contains a hard-coded credential — an API key, token, password, cookie, connection string, or private key — mask the secret value before quoting it (e.g. `api_key="sk-…REDACTED…"`). Quote only enough of the line to anchor the question; never echo the secret itself into a question, the attestation, or any output. A credential committed in plaintext is itself a finding worth a question ("this key is hard-coded here — where should it live instead, and has it been rotated?"). The same rule applies to anything you reproduce from the diff or the author's answers, including the verbatim block in Step 5.
 
-Possible areas of interest (this is not exhaustive come up with others as you see fit for the context):
+Possible areas of interest (this is not exhaustive — come up with others as you see fit for the context):
 
 - **Blast radius**: "This returns `null` on a cache miss instead of throwing. Where downstream assumed a value was always there?"
 - **Road not taken**: "Why `useMemo` here? What cost is it avoiding, and how would you know if it's helping?"
