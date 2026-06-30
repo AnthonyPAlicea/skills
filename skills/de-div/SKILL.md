@@ -115,8 +115,7 @@ Write **`de-div-report.md`** — the **single file delivered into the user's pro
 # de-div report
 
 ## Summary
-One paragraph: what was in scope (or what we built), the overall shape (e.g. "a product page built on
-landmark + article structure"), and the headline choices by type.
+One paragraph: what was in scope (or what we built), the overall shape (e.g. "a product page built on landmark + article structure"), and the headline choices by type.
 
 ## What we did, and why
 One subsection per *type* of semantic choice that applied (omit those that didn't):
@@ -134,20 +133,16 @@ Inline meaning (b/i/strong/em/mark/time/code…) · Native over ARIA (button/det
 Forms (fieldset/legend/label) · Figures & quotes.)
 
 ## Appearance & CSS notes
-Every place an element carries default browser styling and what was done about it — a reset applied,
-or the rule the CSS needs. Group by element. If nothing needed attention, say so.
+Every place an element carries default browser styling and what was done about it — a reset applied, or the rule the CSS needs. Group by element. If nothing needed attention, say so.
 
 ## Decisions we made together
-Brief recap of the ambiguous cases and what was chosen. This report is the record — make it
-complete; there is no separate decisions file.
+Brief recap of the ambiguous cases and what was chosen. This report is the record — make it complete; there is no separate decisions file.
 
 ## Where we kept `<div>`/`<span>` on purpose
-The legitimate cases — pure layout/styling/scripting hooks, or where a real element would invent false
-meaning. Teaches that this is about meaning, not div elimination.
+The legitimate cases — pure layout/styling/scripting hooks, or where a real element would invent false meaning. Teaches that this is about meaning, not div elimination.
 
 ## Principles to carry forward
-3–10 short, memorable takeaways drawn from the actual work (e.g. "A card is an `<article>` because it
-could be syndicated," "`<b>` draws attention; `<strong>` adds importance — not the same thing").
+3–10 short, memorable takeaways drawn from the actual work (e.g. "A card is an `<article>` because it could be syndicated," "`<b>` draws attention; `<strong>` adds importance — not the same thing").
 ```
 
 Keep the report tight and concrete — real snippets beat abstract advice. The point is that next time, the user reaches for the right element themselves.
