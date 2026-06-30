@@ -35,7 +35,7 @@ For each: meaning / when to use instead of a span, and the default UA styling yo
 | `<q>` | Short **inline** quotation — UA inserts the quote marks, don't type them | quote marks via `::before/::after` |
 | `<abbr>` | Abbreviation/acronym; expansion in `title` | ~none in modern UAs |
 | `<dfn>` | The **defining instance** of a term (ancestor must contain the definition) | `font-style: italic` |
-| `<data>` | Human text + machine-readable `value` (product code, rating) | none — safe span swap |
+| `<data>` | Only when something actually consumes a machine-readable `value` (script, microdata) — otherwise it's plain text | none |
 | `<time>` | Date/time/duration + machine-readable `datetime` | none — safe span swap |
 | `<code>` | Fragment of computer code, element name, filename | `font-family: monospace` |
 | `<kbd>` | User input — keys typed/spoken (nestable) | `font-family: monospace` |
@@ -154,9 +154,10 @@ false semantics; a plain styling hook is a legitimate span/div.
 
 ## 3. ⚠ Default browser styling — accounting for appearance
 
-A semantic element carries user-agent CSS that a `<div>`/`<span>` doesn't. When CONVERTing, the job
-is to keep the page looking the same; when AUTHORing, the job is to write the element's CSS knowing
-these defaults. Either way the element choice should never silently change the look. Two buckets:
+A semantic element carries user-agent CSS that a `<div>`/`<span>` doesn't. When editing existing
+markup, the job is to keep the page looking the same; when generating new markup, the job is to write
+the element's CSS knowing these defaults. Either way the element choice should never silently change
+the look. Two buckets:
 
 ### Bucket A — SAFE drop-ins (no visual surprise; just `display:block` or inline)
 
@@ -170,8 +171,8 @@ These are the **ideal first targets**: replace `<div>` with zero CSS risk.
 
 ### Bucket B — brings UA styling you must reset/account for
 
-Whenever you use a Bucket-B element: in CONVERT mode add the neutralizing CSS (if a stylesheet is in
-scope) or document the needed rule in the report; in AUTHOR mode write the element's CSS with these
+Whenever you use a Bucket-B element: in EDIT mode add the neutralizing CSS (if a stylesheet is in
+scope) or document the needed rule in the report; in CREATE mode write the element's CSS with these
 defaults in mind. Never let an element choice silently change the look.
 
 **Inline (usually just font tweaks):** `<b>`/`<strong>` → bold; `<i>`/`<em>`/`<cite>`/`<dfn>`/`<var>`/

@@ -27,3 +27,23 @@ You might use this skill to:
 1. Maintain your own skill and understanding of your codebase.
 2. Make a safe space for junior engineers and require the usage of this skill as part of their PRs. Ask them not to submit the merge request until they are comfortable with their understanding, or to include the report in the PR description with "I don't know" as being a welcome answer that invites pair coding and mentorship.
 3. Open source maintainers may require a do-i-understand report in PRs as a light honor system requirement.
+
+
+### de-div
+
+```
+npx skills add https://github.com/anthonypalicea/skills --skill de-div
+```
+
+This skill helps you to be a skilled HTML author. The goal is to get the meaningless `<div>` and `<span>` soup out of your markup and replace it with semantic, accessible HTML, the kind that says what it *is*, not how it looks.
+
+It works two ways. In EDIT mode it de-divs markup you already have. In CREATE mode it helps while generating something new and steers the markup toward the right elements. In both modes it does the work where the choice is obvious, but when a choice is genuinely ambiguous it stops and thinks it through with you. It endeavors to keep your UI looking the same, accounting for the default styling that real elements bring (a `<fieldset>` is not a plain `<div>`).
+
+Use the report at the end to see the *types* of semantic choices that were made and why. This helps you understand the choices well enough to be accountable for them and grow your semantic HTML authoring skill.
+
+#### When to use this skill
+You might use this skill to:
+
+1. Clean up div soup in an existing component, page, or whole codebase, without changing how it looks.
+2. Build new pages and components that are semantic and accessible from the start.
+3. Keep your own knowledge of semantic HTML sharp. Read the report, learn the choices, and stay accountable for the markup you ship.
