@@ -1,5 +1,5 @@
 # Skills for Devs Who Want to Understand 
-## by Tony Alicea
+**by Tony Alicea**
 
 I've been teaching devs to understand what they do, not just imitate, for over a decade.
 
