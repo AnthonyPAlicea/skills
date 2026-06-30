@@ -28,6 +28,7 @@ You might use this skill to:
 2. Make a safe space for junior engineers and require the usage of this skill as part of their PRs. Ask them not to submit the merge request until they are comfortable with their understanding, or to include the report in the PR description with "I don't know" as being a welcome answer that invites pair coding and mentorship.
 3. Open source maintainers may require a do-i-understand report in PRs as a light honor system requirement.
 
+---
 
 ### de-div
 
