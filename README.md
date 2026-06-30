@@ -1,4 +1,6 @@
 # Skills for Devs Who Want to Understand 
+## by Tony Alicea
+
 I've been teaching devs to understand what they do, not just imitate, for over a decade.
 
 These skills are designed to help developers, designers, and software engineers to build the best products with AI, while maintaining their knowledge, understanding, experience, and wisdom.
