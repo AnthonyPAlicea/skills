@@ -38,7 +38,7 @@ npx skills add https://github.com/anthonypalicea/skills --skill de-div
 
 This skill helps you to be a skilled HTML author. The goal is to get the meaningless `<div>` and `<span>` soup out of your markup and replace it with semantic, accessible HTML, the kind that says what it *is*, not how it looks.
 
-It works two ways. In EDIT mode it de-divs markup you already have. In CREATE mode it helps while generating something new and steers the markup toward the right elements. In both modes it does the work where the choice is obvious, but when a choice is genuinely ambiguous it stops and thinks it through with you. It endeavors to keep your UI looking the same, accounting for the default styling that real elements bring (a `<fieldset>` is not a plain `<div>`).
+It works in two ways. In EDIT mode running `/de-div` de-divs markup you already have. In CREATE mode it helps while generating something new and steers the markup toward the right elements. In both modes it does the work where the choice is obvious, but when a choice is genuinely ambiguous it stops and thinks it through with you. It endeavors to keep your UI looking the same, accounting for the default styling that real elements bring (a `<fieldset>` is not a plain `<div>`).
 
 Use the report at the end to see the *types* of semantic choices that were made and why. This helps you understand the choices well enough to be accountable for them and grow your semantic HTML authoring skill.
 
