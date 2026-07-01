@@ -190,13 +190,14 @@ auto quote marks.
 | `<dd>` | `margin-inline-start: 40px` | `margin: 0` |
 | `<dl>`, `<p>` | `margin-block: 1em` | `margin: 0` |
 | `<address>` | `font-style: italic` | `font-style: normal` |
-| `<hr>` | beveled `border: inset` + auto margins | flat `border-top` |
+| `<hr>` | beveled `border-style: inset` on all sides (`border-width: 1px`) + `color: gray` + `margin-block: 0.5em` + `margin-inline: auto` + `overflow: hidden` | reset the whole border, then draw one line: `border: none; border-top: 1px solid` (a lone `border-top` leaves the other three inset edges visible) |
 
 **Interactive / form elements — the big gotchas:**
 
 - **`<fieldset>`** — `border: 2px groove`, padding, `margin-inline: 2px`, `min-inline-size:
   min-content`. To behave like a plain `<div>`: reset `border`, `padding`, `margin`, and
-  `min-inline-size: auto`. (Canonical contrast: heavy default styling, vs. style-free `<article>`.)
+  `min-inline-size: 0` (use `0`, not `auto` — `auto` reverts to min-content if the fieldset becomes a
+  flex/grid item). (Canonical contrast: heavy default styling, vs. style-free `<article>`.)
 - **`<legend>`** — special box straddling the fieldset's top border; restyle if undesired.
 - **`<details>` / `<summary>`** — `<details>` is **collapsed by default** (content hidden until the
   `open` attribute; toggle + keyboard are built in, no JS). `<summary>` shows a disclosure triangle
@@ -206,9 +207,12 @@ auto quote marks.
   UA-centered, get a `::backdrop`, sit in the top layer, make the background inert, set focus, and
   close on `Esc` — all free. Replacing a div modal deletes your centering math, backdrop element,
   focus-trap JS, and Esc handler.
-- **`<button>`** — full native chrome (`appearance: auto`, border, `ButtonFace`, `cursor: pointer`).
-  Correct semantics/keyboard/focus for free; usually reset `appearance`/`border`/`background`/
-  `padding`/`font` to match the old look (often `all: unset` + your styles).
+- **`<button>`** — full native chrome (`appearance: auto`, border, `ButtonFace` background). Note it
+  does **not** get `cursor: pointer` — the UA default is the plain arrow (`cursor: default`), which is
+  exactly why designs add `cursor: pointer` by hand. Correct semantics/keyboard/focus for free;
+  usually reset `appearance`/`border`/`background`/`padding`/`font` to match the old look (often
+  `all: unset` + your styles — `all` resets `appearance` and keeps the role, focusability, and
+  activation, but drops the focus ring, so restore `:focus-visible`).
 - **`<progress>` / `<meter>`** — native widgets; need `appearance: none` + vendor pseudo-elements to
   style (`::-webkit-progress-bar`, `::-moz-progress-bar`, …).
 

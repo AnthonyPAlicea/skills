@@ -49,4 +49,4 @@ You might use this skill to:
 
 1. Clean up div soup in an existing component, page, or whole codebase, without changing how it looks.
 2. Build new pages and components that are semantic and accessible from the start.
-3. Keep your own knowledge of semantic HTML sharp. Read the report, learn the choices, and stay accountable for the markup you ship.
+3. Keep or improve your own knowledge (or that of junior team members) of semantic HTML. Use the LLM as a semantic thinking partner, read the report on its own decisions, and stay accountable for the markup you ship.

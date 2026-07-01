@@ -1,7 +1,7 @@
 ---
 name: de-div
 description: >-
-  Author semantic, accessible HTML and keep "div soup" (meaningless <div>/<span>) out of the DOM — in two modes. EDIT mode de-divs existing markup (a codebase, page, component, or template), turning divs/spans into real semantic elements while preserving the visual appearance. CREATE mode rides along while you write new markup, steering it toward semantic elements from the start. Works on anything that produces DOM — HTML, JSX/TSX, Vue, Svelte, Astro, Angular templates, PHP, Express, etc. In both modes the skill does the work, acts as a thinking partner on ambiguous cases, accounts for default element styling, and ends with an educational report teaching the user to be a good HTML author. Use whenever the user wants to remove or reduce divs/spans, "de-div" or "de-div soup" their markup, make HTML more semantic or accessible, replace div/span with real elements, audit markup for semantics, OR wants to create/scaffold/build a new page, component, or template and have the markup come out semantic and accessible — even if they don't say "de-div." Also trigger when reviewing or writing a component whose markup is (or would default to) nested divs.
+  Author semantic, accessible HTML and keep "div soup" (meaningless <div>/<span>) out of the DOM — in two modes. EDIT mode de-divs existing markup (a codebase, page, component, or template), turning divs/spans into real semantic elements while preserving the visual appearance. CREATE mode rides along while you write new markup, steering it toward semantic elements from the start. Works on anything that produces DOM — HTML, JSX/TSX, Vue, Svelte, Astro, Angular templates, PHP, Express, etc. In both modes the skill does the work, acts as a thinking partner on ambiguous cases, accounts for default element styling, and ends with an educational report teaching the user to be a good HTML author. Use whenever the user wants to remove or reduce divs/spans, "de-div" or "clean up div soup" their markup, make HTML more semantic or accessible, replace div/span with real elements, audit markup for semantics, OR wants to create/scaffold/build a new page, component, or template and have the markup come out semantic and accessible — even if they don't say "de-div." Also trigger when reviewing or writing a component whose markup is (or would default to) nested divs.
 ---
 
 # de-div
@@ -20,12 +20,12 @@ A catalog of useful elements and patterns, default-styling buckets, native-over-
 
 Same skill, two entry points. Detect which one you're in and start accordingly; the two share the same spine (decide by meaning → log what's ambiguous → resolve with the user → report).
 
-- **EDIT** — the markup already exists and you're refactoring it. Triggers: "de-div this," "make this semantic," "too many divs," pointing at a file/component/codebase. The constraint is **preserve the existing look and behavior** while swapping in real elements.
+- **EDIT** — the markup already exists and you're refactoring it. Triggers: "de-div this," "make this semantic," "too many divs,", "div soup" pointing at a file/component/codebase. The constraint is **preserve the existing look and behavior** while swapping in real elements.
 - **CREATE** — the markup doesn't exist yet and you're writing it. Triggers: "build/scaffold/create a page/component/template" while this skill is active. There's no existing look to preserve; instead you **reach for the right element as you write**, and account for the default styling of what you author in the CSS you write alongside it.
 
 If both apply (e.g. "add a new section to this component and clean up the divs while you're there"), run them together: CREATE the new markup semantically and EDIT the surrounding soup, with one shared working list and one report.
 
-**One deliverable.** The *only* file you write into the user's project is **`de-div-report.md`**, at the very end. Track ambiguities and decisions in an **ephemeral working list** — your task/todo list, or a scratch file in a temp location *outside* the project. Never write a decisions file into the project; the report (authored last, when every answer is known) is the durable record, and its "Decisions" section absorbs what the working list held.
+**One deliverable.** The *only* report file you write into the user's project is **`de-div-report.md`**, at the very end. Track ambiguities and decisions in an **ephemeral working list** — your task/todo list, or a scratch file in a temp location *outside* the project. Never write a decisions file into the project; the report (authored last, when every answer is known) is the durable record, and its "Decisions" section absorbs what the working list held.
 
 If it's unclear if you are creating or editing, ask the user to clarify. If they don't know, default to EDIT mode (you can always add new markup later).
 
@@ -35,7 +35,7 @@ If it's unclear if you are creating or editing, ask the user to clarify. If they
 
 - **Ask what the content *is*, not what it looks like.** `<strong>` is not "bold," `<em>` is not "italic," `<section>` is not "a box." Pick by meaning, style with CSS.
 - **`<div>` and `<span>` are legitimate** as pure layout/styling/scripting hooks. The goal is to keep *meaningless* divs out where a real element fits — not to eliminate every div. A wrong semantic element is worse than a neutral div (it lies to assistive tech), so **prefer a div over guessing**.
-- **Account for default styling.** Semantic elements often carry user-agent CSS. In EDIT mode that means preserving the existing look (apply a neutralizing rule or document it); in CREATE mode it means writing the element's CSS with its defaults in mind. Either way, an element choice should never silently change how the page looks. See the Bucket A / Bucket B split in the guide.
+- **Account for default styling.** Semantic elements often carry user-agent CSS. In EDIT mode that means preserving the existing look (apply a neutralizing rule or document it); in CREATE mode it means writing the element's CSS with its defaults in mind. Either way, an element choice should never silently change how the page looks. See the Bucket A / Bucket B split in the guide (`references/ELEMENT-GUIDE.md`).
 - **Respect the host language.** JSX uses `className`/`htmlFor` and camelCase handlers; Vue/Svelte/Angular have their own binding syntax; fragments and component boundaries matter. Author in the idiom of the file — a semantic element is still semantic as a JSX tag.
 
 ---
@@ -84,7 +84,7 @@ When you **cannot** recover the meaning from the evidence, log it (include the f
 - **Bold/italic where intent is unknowable.** `<strong>` (importance) vs `<b>` (keyword/product name) vs decoration? `<em>` (stress) vs `<i>` (term/foreign) vs `<cite>` (work title) vs decoration?
 - **`<section>` vs layout `<div>`.** No heading and reads as pure layout → keep/use a div. Plausibly a thematic section but unclear → ask (and whether it needs a heading).
 - **Behavior-changing conversions** (EDIT). Clickable div → `<button>`, JS show/hide → `<details>`, custom modal → `<dialog>`. These change runtime behavior, focus, and JS wiring — confirm and inspect the JS before committing; don't silently rewrite a working widget. (See native-over-ARIA in guide.)
-- **Genuinely contested choices.** E.g. breadcrumbs as `<nav><ol><li>` (WAI-ARIA) vs. a hierarchy of links in a `<p>` (Tony's HTML Recipes). Surface the trade-off; let the user pick.
+- **Genuinely contested choices.** E.g. `<article>` vs `<section>` where the content could be either, or `<b>` vs `<strong>` where the text could be either a keyword or an important note. If you can't tell, ask and include the decision in the final report.
 
 Decision entry format (track each as you go, in your working list — not a project file):
 
@@ -103,7 +103,7 @@ Group related items (`[inline-emphasis]`, `[dynamic-content]`, `[interactive]`, 
 
 ### Step 4 — Thought-partner the open decisions (both modes)
 
-Resolve the logged decisions *with* the user — not one popup per item. Batch them by group and present each group together so the user sees the pattern. Use `AskUserQuestion` for clean multiple-choice decisions; fall back to prose when a question needs explanation or there are many similar instances ("all 8 of these wrap a price — should they all be `<data>`?"). Apply each resolution as it's made (in CREATE mode, swap your assumed element for the confirmed one), preserve appearance the same way, and update your working list to record what was chosen — so the report's "Decisions" section comes out accurate. (The resolved decisions live in the report, not a separate file, so nothing can go stale: the report is authored last, once every answer is in.)
+Resolve the logged decisions *with* the user — not one popup per item. Batch them by group and present each group together so the user sees the pattern. Use clean multiple-choice questions when possible; fall back to prose when a question needs explanation or there are many similar instances ("all 8 of these wrap a price — should they all be `<data>`?"). Apply each resolution as it's made (in CREATE mode, swap your assumed element for the confirmed one), preserve appearance the same way, and update your working list to record what was chosen — so the report's "Decisions" section comes out accurate. (The resolved decisions live in the report, not a separate file, so nothing can go stale: the report is authored last, once every answer is in.)
 
 If a decision reveals a repeated pattern ("every `{price}` is a formatted currency value"), apply it across all matching instances at once rather than re-asking. For a quick scaffold where the user doesn't want to be interrupted, it's fine to proceed on sensible defaults — but your working list must still record each assumption so nothing is a silent guess and the report can recount it.
 
@@ -151,8 +151,8 @@ Keep the report tight and concrete — real snippets beat abstract advice. The p
 
 ## Notes
 
-- **One file out:** the only artifact written into the user's project is `de-div-report.md`. Ambiguity tracking stays in an ephemeral working list (task/todo list or a temp scratch file outside the project) — never a `de-div-decisions.md` in the repo.
+- **One file out:** the only report written into the user's project is `de-div-report.md`. Ambiguity tracking stays in an ephemeral working list (task/todo list or a temp scratch file outside the project) — never a `de-div-decisions.md` in the repo.
 - **Scale (EDIT):** work in passes by area — layout/landmarks first (Bucket A, highest value), then components, then inline text. Keep your working list current throughout.
 - **Audit only (EDIT):** if the user wants no edits, produce just the report, describing what *would* change (it absorbs the decision log), and skip the editing.
 - **Fast scaffold (CREATE):** still author semantically and still log assumptions to your working list — just don't stop to ask on every binding; resolve them in one pass at the end, then write the report.
-- Pull `b`/`i`/`strong`/`em` distinctions and default-styling specifics from `references/ELEMENT-GUIDE.md` rather than reciting from memory.
+- Pull `b`/`i`/`strong`/`em` and other distinctions and default-styling specifics from `references/ELEMENT-GUIDE.md` rather than reciting from memory.
